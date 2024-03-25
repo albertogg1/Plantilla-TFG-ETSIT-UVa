@@ -1,0 +1,84 @@
+% Compilar con XeLaTeX
+\usepackage{graphicx}
+\usepackage[margin=3cm]{geometry}
+\usepackage{fontspec}       
+\usepackage{xcolor} 
+\usepackage[spanish]{babel} % Para tener los elementos de texto en español
+\usepackage{hyperref}       % Hipervinculos para todo lo útil
+\usepackage[none]{hyphenat} % evitamos que rompa las palabras
+\usepackage{subfiles}       % añadir ficheros externos
+\usepackage{appendix}       % soporte para anexos
+\usepackage{caption}        % paquetes para figuras
+\usepackage{subcaption} 
+\usepackage{datetime}       % Para conseguir nombre del mes
+\usepackage{tabularx}       % Para que la columna X se extienda hasta el final
+\usepackage{minted}         % Para escribir código
+\usepackage{lipsum}         % Para rellenar con texto de ejemplo para maquetación
+\usepackage[nottoc,notlot,notlof]{tocbibind}    % Paquete para poner la bibliografia en la table of contents
+\usepackage{amsmath}
+
+% Encabezados
+\usepackage{fancyhdr} 
+\pagestyle{fancy}
+\fancyhf{}                  % Limpia todos los encabezados y pies de página actuales
+\fancyfoot[C]{\thepage}     % Número de página centrado en el pie de página
+\fancyhead[RO]{\scshape \nouppercase{\rightmark}}   % Encabezado páginas impares
+\fancyhead[LE]{\scshape \nouppercase{\leftmark}}    % Encabezado páginas pares
+\renewcommand{\headrulewidth}{0.4pt}    % Línea horizontal en el encabezado
+
+% Redifinimos el nombre que asigna babel spanish a las tablas (cuadro) a tabla
+\renewcommand{\spanishtablename}{Tabla}
+\renewcommand{\spanishlisttablename}{Índice de tablas}
+\renewcommand{\spanishcontentsname}{Índice}
+\renewcommand{\listoflistingscaption}{Índice de código fuente}
+\renewcommand{\appendixname}{Anexos}
+\renewcommand{\appendixtocname}{Anexos}
+\renewcommand{\appendixpagename}{Anexos}
+
+% Definimos el comando de página en blanco
+\newcommand\paginablanco{% 
+    \null
+    \thispagestyle{empty}% 
+    \newpage}
+
+% Definimos el comando de página en blanco sin avanzar numeración
+\newcommand\paginablancosin{% 
+    \paginablanco{}
+    \addtocounter{page}{-1}}
+
+% Mayor anchura en las tablas
+\renewcommand{\arraystretch}{1.5}
+% Mayor ancuhura en las fracciones
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+% Comando escribir TFG
+\newcommand{\tfg}{Trabajo Fin de Grado }
+
+% Para añadir márgen entre párrafos
+\setlength{\parskip}{8pt}
+\setlength{\parindent}{0pt}
+
+% Configuración general del espacio entre figura y caption
+\setlength{\abovecaptionskip}{3pt} % Espacio antes del caption
+\setlength{\belowcaptionskip}{6pt} % Espacio después del caption
+
+% Establecer la anchura por defecto al 80% del ancho del texto
+\setkeys{Gin}{width=\textwidth} 
+
+% Para especificar el color de los enlaces
+\definecolor{darkblue}{RGB}{0,20,114}
+\definecolor{paperblue}{RGB}{0,104,156}
+\hypersetup{
+colorlinks=true,       % false: boxed links; true: colored links
+linkcolor=paperblue,  % color of internal links
+citecolor=paperblue,  % color of links to bibliography
+urlcolor=paperblue    % color of external links
+}
+
+% Código Python
+% https://www.overleaf.com/learn/latex/Code_Highlighting_with_minted
+\setminted[python]{frame=single,
+framesep=8pt,
+fontsize=\footnotesize,
+linenos,
+tabsize=2,
+breaklines}

@@ -1,0 +1,54 @@
+\documentclass[../TFG.tex]{subfiles}
+
+\begin{document}
+
+\section{Figuras}
+
+Como se muestra en la Figura \ref{fig:uva} ...
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/Universidad-de-Valladolid.png}
+    \caption{Universidad de Valladolid.}
+    \label{fig:uva}
+\end{figure}
+
+
+\section{Fórmulas}
+
+Transformada wavelet continua en (\ref{eq:CWT})
+
+\begin{equation}\label{eq:CWT}
+    F(\tau, s) = \frac{1}{\sqrt{|s|}} \int_{-\infty}^{+\infty} f(t) \psi^* \left( \frac{t-\tau}{s} \right) dt
+\end{equation}
+
+Transformada wavelet discreta en (\ref{eq:DWT})
+
+\begin{equation}\label{eq:DWT}
+   D[a, b] = \frac{1}{\sqrt{b}} \sum_{m=0}^{p-1} f[t_m] \psi^* \left[ \frac{t_m-a}{b} \right]
+\end{equation}
+
+\section{Tablas}
+
+En la tabla \ref{tab:ejemplo} se muestra...
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Columna 1} & \textbf{Columna 2} & \textbf{Columna 3} \\
+        \hline
+        Dato 1 & Dato 2 & Dato 3 \\
+        Dato 4 & Dato 5 & Dato 6 \\
+        Dato 7 & Dato 8 & Dato 9 \\
+        \hline
+    \end{tabular}
+    \caption{Ejemplo de una tabla en \LaTeX}
+    \label{tab:ejemplo}
+\end{table}
+
+\section{Citas}
+
+Para gestionar las referencias bibliográficas puedes usar un gestor como Mendeley. \cite{plantillaTFG}
+
+\end{document}

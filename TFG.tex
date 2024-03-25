@@ -1,0 +1,76 @@
+% !TeX program = xelatex
+% IMPORTANTE: Menu -> Settings -> Compiler -> XeLaTeX
+\documentclass[a4paper, twoside, 11pt]{report}
+\usepackage{notoccite}  % Este paquete reordena las citas en función del orden en que aparecen en el texto en lugar del orden en que se citan por primera vez.
+
+\input{secciones/configuracion}
+
+% Comenzamos el documento
+\begin{document}
+% PORTADA
+\subfile{secciones/0.portada_y_tribunal}
+
+\pagenumbering{Roman} % Para comenzar la numeración de páginas en números romanos
+
+% AGRADECIMIENTOS
+\chapter*{}
+\thispagestyle{empty}
+\addcontentsline{toc}{section}{Agradecimientos} % Si queremos que aparezca en el índice
+\begin{flushright}
+\textit{Agradecimientos}
+\end{flushright}
+
+% RESUMEN
+\chapter*{Resumen} % Si no queremos que añada la palabra "Capítulo"
+\addcontentsline{toc}{section}{Resumen} % Si queremos que aparezca en el índice
+\lipsum[0-2]
+\section*{Palabras clave}
+\lipsum[1][1]
+
+\chapter*{Abstract} % si no queremos que añada la palabra "Capítulo"
+\addcontentsline{toc}{section}{Abstract} % Si queremos que aparezca en el índice
+\lipsum[0-2]
+\section*{Keywords}
+\lipsum[1][1]
+
+% ÍNDICES
+{
+\hypersetup{
+    linkcolor=black
+}
+\setlength{\parskip}{0pt}
+
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+}
+
+% CAPÍTULOS
+\pagenumbering{arabic}
+\chapter{Introducción} \label{ch:introduccion}
+\subfile{secciones/1.Introduccion}
+\chapter{Marco teórico}
+\subfile{secciones/2.Marco_teorico}
+\chapter{Procesado}
+\subfile{secciones/3.Procesado}
+\chapter{Desarrollo}
+\subfile{secciones/4.Desarrollo}
+\chapter{Resultados}
+\subfile{secciones/5.Resultados}
+\chapter{Conclusiones}
+\subfile{secciones/6.Conclusiones}
+
+% REFERENCIAS
+\newpage
+\subfile{secciones/referencias}
+
+% ANEXOS
+\appendix
+\clearpage
+\addappheadtotoc
+\appendixpage
+% Anexos aqui
+
+\end{document}
