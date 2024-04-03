@@ -3,7 +3,7 @@ Plantilla LaTeX para la redacción del Trabajo Fin de Grado de la ETSIT de la Un
 
 ## Overleaf
 
-Si quieres usar Overleaf, desde aquí https://www.overleaf.com/read/fqrnqfxzbmnq#ef662b tienes acceso a la plantilla.
+Si usas Overleaf, desde aquí https://www.overleaf.com/read/fqrnqfxzbmnq#ef662b tienes acceso a la plantilla.
 
 ### ⚠️ Compilador
 
